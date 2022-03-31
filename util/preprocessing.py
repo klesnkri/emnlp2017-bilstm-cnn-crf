@@ -30,7 +30,7 @@ def perpareDataset(embeddingsPath, datasets, frequencyThresholdUnknownTokens=50,
         valTransformations: Column specific value transformations
         padOneTokenSentence: True to pad one sentence tokens (needed for CRF classifier)
     """
-    embeddingsName = os.path.splitext(embeddingsPath)[0]
+    embeddingsName = os.path.splitext(embeddingsPath)[0].split(os.path.sep)[-1]
     pklName = "_".join(sorted(datasets.keys()) + [embeddingsName])
     outputPath = 'pkl/' + pklName + '.pkl'
 
